@@ -20,9 +20,7 @@ try {
 				if(fileName === expansion && file.isFile()) {
 					const readStream = fs.createReadStream(path.join(__dirname, './styles', file.name));
 					readStream.on('data', (chunk) => {
-						writeStreamFile.write('\n/* ** ---Chunk Start--- */\n ')
 						writeStreamFile.write(chunk)
-						writeStreamFile.write('\n/* ** ---Chunk End--- */\n')
 					});
 				}
 			})
